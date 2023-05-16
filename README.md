@@ -61,7 +61,6 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :order
 <!-- 商品情報ここまで -->
 
 
