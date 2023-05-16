@@ -95,6 +95,5 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :user
-- belongs_to :item
+- belongs_to :record
 <!-- 発送先情報ここまで -->
