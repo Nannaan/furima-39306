@@ -64,6 +64,22 @@ Things you may want to cover:
 <!-- 商品情報ここまで -->
 
 
+<!-- 購入履歴情報 -->
+## records テーブル
+
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
+| user_id | integer | null: false, foreign_key: true |
+| item_id | integer | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :order
+<!-- 購入履歴情報ここまで -->
+
+
 <!-- 発送先情報 -->
 ## orders テーブル
 
