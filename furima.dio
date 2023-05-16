@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="NYTF0CLFRld2oyk6LYNt" name="ページ1">
-        <mxGraphModel dx="648" dy="758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="457" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -51,7 +51,7 @@
                 <mxCell id="35" value="delivery_id＝配送料(integer型, NOT NULL, active_hash)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="19">
                     <mxGeometry y="146" width="400" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="38" value="area_id＝発送元の地域(integer型, NOT NULL, active_hash)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="19">
+                <mxCell id="38" value="_id＝発送元の地域(integer型, NOT NULL, active_hash)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="19">
                     <mxGeometry y="176" width="400" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="40" value="schedule_id＝発送までの日数(integer型, NOT NULL, active_hash)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="19">
@@ -105,7 +105,7 @@
                 <mxCell id="59" value="user＝購入者(references型, NOT NULL, 外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="58">
                     <mxGeometry y="26" width="360" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="60" value="item_id＝購入した商品(integer型, NOT NULL, 外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="58">
+                <mxCell id="60" value="item＝購入した商品(references型, NOT NULL, 外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="58">
                     <mxGeometry y="56" width="360" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="OBy9S5l76KuZEAGb8SSt-62" style="rounded=0;jumpSize=0;html=1;startArrow=ERone;startFill=0;endArrow=ERoneToMany;endFill=0;sourcePerimeterSpacing=0;endSize=10;startSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="50">
