@@ -71,10 +71,10 @@ Things you may want to cover:
 <!-- 購入履歴情報 -->
 ## records テーブル
 
-| Column  | Type    | Options                        |
-| ------- | ------- | ------------------------------ |
-| user_id | integer | null: false, foreign_key: true |
-| item_id | integer | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ### Association
 
