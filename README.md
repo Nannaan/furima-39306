@@ -40,6 +40,8 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
+- has_many :records
+
 <!-- ユーザー情報ここまで -->
 
 
@@ -61,6 +63,8 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
+- has_one :record
+
 <!-- 商品情報ここまで -->
 
 
