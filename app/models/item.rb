@@ -2,6 +2,14 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  # ActiveHashに関連するファイル
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+  belongs_to :condition
+  belongs_to :delivery
+  belongs_to :prefecture
+  belongs_to :schedule
+
   validates :name,          presence: true
   validates :explain,       presence: true
   validates :category_id,   presence: true
