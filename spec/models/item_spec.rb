@@ -66,6 +66,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is out of setting range")
       end
+      it "価格が半角数値でないと登録できない" do
+        @item.price = '５００'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters")
+      end
       it "ユーザーが紐付いていないと登録できない" do
         @item.user = nil
         @item.valid?
