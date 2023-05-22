@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  validates :image,   presence: { message: "can't be blank" }
   validates :name,    presence: true
   validates :explain, presence: true
   validates :user,    presence: true
