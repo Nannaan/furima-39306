@@ -3,7 +3,6 @@ window.addEventListener('load', () => {
   priceInput.addEventListener("input", () => {
     // 価格
     const inputValue = priceInput.value;
-    console.log(inputValue);
     // 販売手数料
     const addTaxDom = document.getElementById("add-tax-price");
     addTaxDom.innerHTML = Math.floor(inputValue * 0.1)
