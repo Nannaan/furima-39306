@@ -1,4 +1,4 @@
-class Schedule < ApplicationRecord
+class Schedule < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '1~2日で発送' },
@@ -8,5 +8,5 @@ class Schedule < ApplicationRecord
 
   include ActiveHash::Associations
   has_many :items
-  
+
 end

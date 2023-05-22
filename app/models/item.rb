@@ -9,11 +9,11 @@ class Item < ApplicationRecord
 
   # ActiveHashに関連するファイル
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category
-  belongs_to :condition
-  belongs_to :delivery
-  belongs_to :prefecture
-  belongs_to :schedule
+  belongs_to :category,   :integer, presence: true
+  belongs_to :condition,  :integer, presence: true
+  belongs_to :delivery,   :integer, presence: true
+  belongs_to :prefecture, :integer, presence: true
+  belongs_to :schedule,   :integer, presence: true
 
   #「---」の時は保存できないようにする
   validates :category_id,   numericality: { other_than: 1 , message: "can't be blank"}
