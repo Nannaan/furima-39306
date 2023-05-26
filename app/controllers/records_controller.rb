@@ -13,6 +13,10 @@ class RecordsController < ApplicationController
     end
   end
 
+  def index
+    @record_order = RecordOrder.new(record_params)
+  end
+
   private
 
   def record_params
