@@ -17,7 +17,7 @@ class RecordOrder
 
     # ActiveHashに関連するファイル(都道府県)
     extend ActiveHash::Associations::ActiveRecordExtensions
-    belongs_to :prefecture, :integer, presence: true
+    belongs_to :prefecture
     # 「---」の時は保存できないようにする
     validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
 
