@@ -2,10 +2,6 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :set_item, only: [:index, :create]
 
-  def new
-    @record_order = RecordOrder.new
-  end
-
   def index
     @record_order = RecordOrder.new
   end
@@ -16,14 +12,16 @@ class RecordsController < ApplicationController
       @record_order.save
       redirect_to root_path
     else
-      render :new
+      render :index
     end
   end
 
   private
 
   def record_params
-    params.require(:record_order).permit(:postal_code, :prefecture_id, :city, :address, :building, :phone_number, :record).merge(user_id: current_user.id)
+    params.require(:record_order).permit(:postal_code, :prefecture_id, :city, :address, :building, :phone_number).merge(
+      user_id: current_user.id, item_id: @item.id
+    )
   end
 
   def set_item
