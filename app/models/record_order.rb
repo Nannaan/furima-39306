@@ -1,6 +1,6 @@
 class RecordOrder
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :address, :building, :phone_number, :record_id
+  attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :address, :building, :phone_number, :record_id, :token
 
   with_options presence: true do
     validates :user_id
@@ -22,4 +22,7 @@ class RecordOrder
     Order.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, address: address, building: building,
                  phone_number: phone_number, record_id: record.id)
   end
+
+  validates :token, presence: true
+  
 end
