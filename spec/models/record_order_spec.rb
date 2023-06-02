@@ -80,7 +80,7 @@ RSpec.describe RecordOrder, type: :model do
         @record_order.valid?
         expect(@record_order.errors.full_messages).to include("Item can't be blank")
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @record_order.token = nil
         @record_order.valid?
         expect(@record_order.errors.full_messages).to include("Token can't be blank")

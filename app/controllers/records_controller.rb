@@ -17,7 +17,6 @@ class RecordsController < ApplicationController
       render :index
     end
   end
-  
 
   private
 
@@ -33,16 +32,16 @@ class RecordsController < ApplicationController
 
   def sold_item
     return unless current_user == @item.user || Record.exists?(item_id: @item.id)
+
     redirect_to root_path
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.price,
       card: record_params[:token],
       currency: 'jpy'
     )
   end
-
 end

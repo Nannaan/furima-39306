@@ -12,7 +12,6 @@ class RecordOrder
     validates :address
     validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is invalid' }
   end
-  
 
   def save
     # 購入履歴を保存し、変数recordに代入する
@@ -24,5 +23,4 @@ class RecordOrder
   end
 
   validates :token, presence: true
-  
 end
