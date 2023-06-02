@@ -130,24 +130,24 @@
 
     <% @items.each do |item| %>
       <li class='list'>
-        <%= link_to item_path(item.id), method: :get do %>
+        <%= link_to item_path(item.id) do %>
         <%# 商品画像 %>
         <div class='item-img-content'>
           <%= image_tag item.image.variant(resize: '296x296'), class: 'item-image' if item.image.attached? %>
-
-          <%# 商品が売れていればsold outを表示しましょう %>
-          <div class='sold-out'>
-            <span>Sold Out!!</span>
-          </div>
-          <%# //商品が売れていればsold outを表示しましょう %>
-
+          <%# 商品が売れていればsold outを表示 %>
+          <% if Record.exists?(item_id: item.id) %>
+            <div class='sold-out'>
+              <span>Sold Out!!</span>
+            </div>
+          <% end %>
         </div>
-        <%# /商品画像 %>
         <div class='item-info'>
+          <%# 商品名 %>
           <h3 class='item-name'>
             <%= item.name %>
           </h3>
           <div class='item-price'>
+            <%# 商品の値段 %><%# 商品の配送料負担 %>
             <span><%= item.price %>円<br><%= item.delivery.name %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
@@ -179,10 +179,9 @@
         <% end %>
       </li>
     <% end %>
-    <%# //商品がない時のダミー %>
     </ul>
   </div>
-  <%# /商品一覧 %>
+  <%# /商品一覧ここまで %>
 </div>
 <%= link_to(new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
