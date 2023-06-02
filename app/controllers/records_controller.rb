@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :set_item, only: [:index, :create]
+  before_action :sold_item, only: [:index, :create]
 
   def index
     @record_order = RecordOrder.new
@@ -16,6 +17,7 @@ class RecordsController < ApplicationController
       render :index
     end
   end
+  
 
   private
 
@@ -27,6 +29,11 @@ class RecordsController < ApplicationController
     params.require(:record_order).permit(:postal_code, :prefecture_id, :city, :address, :building, :phone_number).merge(
       user_id: current_user.id, item_id: params[:item_id], token: params[:token]
     )
+  end
+
+  def sold_item
+    return unless current_user == @item.user || Record.exists?(item_id: @item.id)
+    redirect_to root_path
   end
 
   def pay_item
