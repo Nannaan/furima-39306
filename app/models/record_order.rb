@@ -21,5 +21,4 @@ class RecordOrder
     Order.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, address: address, building: building,
                  phone_number: phone_number, record_id: record.id)
   end
-
 end
