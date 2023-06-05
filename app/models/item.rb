@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_one_attached :image
   has_one :record
 
-  validates :image,   presence: { message: "can't be blank" }
+  validates :image,   presence: { message: 'を選択してください' }
   validates :name,    presence: true
   validates :explain, presence: true
   validates :price,   presence: true,
@@ -18,9 +18,9 @@ class Item < ApplicationRecord
   belongs_to :schedule,   :integer, presence: true
 
   # 「---」の時は保存できないようにする
-  validates :category_id,   numericality: { other_than: 1, message: "can't be blank" }
-  validates :condition_id,  numericality: { other_than: 1, message: "can't be blank" }
-  validates :delivery_id,   numericality: { other_than: 1, message: "can't be blank" }
-  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :schedule_id,   numericality: { other_than: 1, message: "can't be blank" }
+  validates :category_id,   numericality: { other_than: 1, message: 'を選択してください' }
+  validates :condition_id,  numericality: { other_than: 1, message: 'を選択してください' }
+  validates :delivery_id,   numericality: { other_than: 1, message: 'を選択してください' }
+  validates :prefecture_id, numericality: { other_than: 1, message: 'を選択してください' }
+  validates :schedule_id,   numericality: { other_than: 1, message: 'を選択してください' }
 end
